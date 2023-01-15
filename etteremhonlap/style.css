@@ -512,6 +512,10 @@ input[type=submit] {
 
     .etlap{
         width:100%;
+        font-size:14px;
+    }
+    #leves th:nth-child(2), #leves th:nth-child(3){
+        font-size:18px;
     }
     
 
