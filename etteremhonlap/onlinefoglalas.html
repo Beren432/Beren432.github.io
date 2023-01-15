@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Újpesti Étterem - Online asztalfoglalás</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Címlap</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="etlap.html">Étlap</a>
+        <a href="galeria.html">Galéria</a>
+        <a class="aktualis" href="onlinefoglalas.html">Online asztalfoglalás</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+    <div class="mobilmenu">
+        <div class="menusor"><img src="images/menu.png">
+            <div class="menutartalom">
+                <a href="index.html">Címlap</a>
+                <a href="rolunk.html">Rólunk</a>
+                <a href="etlap.html">Étlap</a>
+                <a href="galeria.html">Galéria</a>
+                <a class="aktualis" href="onlinefoglalas.html">Online asztalfoglalás</a>
+                <a href="kapcsolat.html">Kapcsolat</a>
+            </div>
+        </div>
+    </div>
+    <div class="tartalom">
+        <h1>Online asztalfoglalás</h1>
+        Kérjük, adja meg az alábbi adatait! Foglalása eredményéről e-mailben küldünk megerősítést.<br><br>
+
+        <form>
+            <b>Személyes adatok</b><br>
+            <label for="nev">Név:</label>
+            <input type="text" id="nev" name="nev" required><br>
+
+            <label for="email">E-mail cím:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="telefon">Telefonszám:</label>
+            <input type="tel" id="telefon" name="telefon" required><br><br>
+
+            <b>Foglalás adatai</b><br>
+            <label for="nap">Nap:</label>
+            <input type="date" id="nap" name="nap" required><br>
+
+            <label for="ido">Pontos időpont:</label>
+            <input type="time" id="ido" name="ido" required><br>
+
+            <label for="szam">Vendégek száma:</label>
+            <select id="szam" name="szam" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select><br><br>
+
+            <b>Megjegyzés</b><br>
+            <textarea name="megjegyzes">               
+                </textarea><br><br>
+
+            <input type="checkbox" id="adatved" name="adatved">
+            <label for="adatved">Elolvastam és elfogadom az <i>Adatvédelmi nyilatkozatot</i>.</label><br><br>
+
+            <input type="submit" value="Foglalás elküldése">
+            
+        </form>
+        <footer>
+            Reszponzív honlap. Inspiráció & szöveg: <a href="https://ujpestikakukk.hu/">Kakukk Vendéglő</a>. Készítette Valló Gábor (2023)
+        </footer>
+    </div>
+</body>
+
+</html>
