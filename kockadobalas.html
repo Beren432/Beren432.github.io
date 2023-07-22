@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kockadobás-generátor</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin: 20px 0 50px 0;
+            color: #1D8348;
+        }
+
+        #balhasab {
+            width: 50%;
+            float: left;
+        }
+
+        #jobbhasab {
+            width: 50%;
+            float: right;
+        }
+
+        td {
+            text-align: left;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: #FFEE58;
+            width: 160px;
+            box-shadow: 2px 3px grey;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #FBC02D;
+        }
+
+        button:active {
+            background-color: #F4511E;
+        }
+
+        #statisztika {
+            clear: both;
+            margin: 10% 10% 10px 10%;
+            height: 420px;
+            border-bottom: 2px solid black;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+
+        #statisztika div {
+            width: 6%;
+            background-image: linear-gradient(to right, #1D8348, #2ECC71, #1D8348);
+            color: white;
+            border-radius: 5px 5px 0 0;
+        }
+
+        #oszlop2,
+        #oszlop3,
+        #oszlop4,
+        #oszlop5,
+        #oszlop6,
+        #oszlop7,
+        #oszlop8,
+        #oszlop9,
+        #oszlop10,
+        #oszlop11,
+        #oszlop12 {
+            height: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="cim"><h1>Kockadobás-generátor</h1></div>
+    <div id="balhasab">
+        <img src="images/1.png" id="kocka1" alt="elso kocka">
+        <img src="images/1.png" id="kocka2" alt="masodik kocka">
+        <div>
+            <button id="ujdobas">Új dobás</button>
+            <button id="szazdobas">100 dobás</button>
+            <button id="torles">Törlés</button>
+        </div>
+    </div>
+    <div id="jobbhasab">
+        <table>
+            <tr>
+                <td>Kockadobások száma:</td>
+                <td id="szam">0</td>
+            </tr>
+            <tr>
+                <td>Kockadobások átlaga:</td>
+                <td id="atlag">0</td>
+            </tr>
+            <tr>
+                <td>Kockadobások összege:</td>
+                <td id="osszeg">0</td>
+            </tr>
+            <tr>
+                <td>Dupla dobások száma:</td>
+                <td id="dupla">0 (0%)</td>
+            </tr>
+        </table>
+    </div>
+    <div id="statisztika">
+        <div id="oszlop2">2</div>
+        <div id="oszlop3">3</div>
+        <div id="oszlop4">4</div>
+        <div id="oszlop5">5</div>
+        <div id="oszlop6">6</div>
+        <div id="oszlop7">7</div>
+        <div id="oszlop8">8</div>
+        <div id="oszlop9">9</div>
+        <div id="oszlop10">10</div>
+        <div id="oszlop11">11</div>
+        <div id="oszlop12">12</div>
+    </div>
+    <script>
+        let dobasszam = 0;
+        let dobasosszeg = 0;
+        let dupladobas = 0;
+
+        ujdobas.addEventListener("click", dobas);
+        szazdobas.addEventListener("click", szazatdob);
+        torles.addEventListener("click", torol);
+
+        function dobas() {
+            let ujdobasbal = Math.floor(Math.random() * 6) + 1;
+            let ujdobasjobb = Math.floor(Math.random() * 6) + 1;
+            kocka1.src = "images/" + ujdobasbal + ".png";
+            kocka2.src = "images/" + ujdobasjobb + ".png";
+
+            dobasszam++;
+            szam.innerHTML = dobasszam;
+
+            dobasosszeg = dobasosszeg + ujdobasbal + ujdobasjobb;
+            osszeg.innerHTML = dobasosszeg;
+
+            atlag.innerHTML = (dobasosszeg / dobasszam).toPrecision(3);
+
+            if (ujdobasbal == ujdobasjobb) {
+                dupladobas++;
+            }
+            dupla.innerHTML = dupladobas + " (" + Math.round((dupladobas / dobasszam) * 100) + `%)`;
+
+            //kiolvassuk a magasságot, levágjuk a végéről a "px"-t
+            //ha még nincs 370px magas, akkor megnöveljük 5-tel, ez lesz az új magasság
+            let oszlopmagassag = document.getElementById("oszlop" + (ujdobasbal + ujdobasjobb)).style.height.slice(0, -2);
+            if (oszlopmagassag < 370) {
+                document.getElementById("oszlop" + (ujdobasbal + ujdobasjobb)).style.height = (Number(oszlopmagassag) + 5) + "px";
+            }
+        }
+
+        function szazatdob() {
+            for (let i = 0; i < 100; i++) {
+                dobas();
+            }
+        }
+
+        function torol() {
+            dobasszam = 0;
+            szam.innerHTML = 0;
+
+            dobasosszeg = 0;
+            osszeg.innerHTML = 0;
+
+            atlag.innerHTML = 0;
+
+            dupladobas = 0;
+            dupla.innerHTML = `0 (0%)`;
+
+            for (let j = 0; j <= 10; j++) {
+                document.getElementById("oszlop" + (j + 2)).style.height = "0px";
+            }
+        }
+    </script>
+</body>
+
+</html>
