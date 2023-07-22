@@ -29,7 +29,12 @@ function kepcsere() {
     else{
         kep.src = "images/star-solid.svg";
         kep.classList.remove("lecserel");
-        kep.style.animationName="csillag";
+        if(screen.width>=820){
+            kep.style.animationName="csillag";
+        }
+        else{
+            kep.style.animationName="csillag-kis";
+        }
         setTimeout(kepcsere, 100);
     }
 }
