@@ -14,52 +14,53 @@
             box-sizing: border-box;
         }
 
-        body{
+        body {
             background-image: url(images/lotto-gbcbe279d6_1280.jpg);
-            background-size:cover;
+            background-size: cover;
         }
 
         #balhasab {
-            background-color: rgba(255,255,255,0.8);
-            border-radius:20px;
-            border:10px inset #f7fad4;
-            height:710px;
-            padding:20px 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            border: 10px inset #f7fad4;
+            height: 790px;
+            padding: 20px 30px;
             float: left;
-            width: 35%;
-            font-size: 40px;
-            font-weight: bold;
+            width: 50%;
+            font-size: 20px;
             margin: 20px 0 10px 20px;
         }
 
         #jobbhasab {
-            background-color:rgba(255,255,255,0.8);
-            border-radius:20px;
-            border:10px inset #f7fad4;
-            height:710px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            border: 10px inset #f7fad4;
+            height: 790px;
             float: right;
-            width: 60%;
-            font-size: 20px;
-            padding:10px 30px 20px 30px;
+            width: 45%;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 10px 30px 20px 30px;
             margin: 20px 20px 10px 0px;
         }
 
-        #talalat{
-            float:left;
-            width:45%;
+        #talalat {
+            float: left;
+            width: 45%;
         }
-        #statisztika{
-            float:right;
-            width:45%;
+
+        #statisztika {
+            float: right;
+            width: 45%;
         }
 
         .circle {
-            display:inline-block;
+            display: inline-block;
             border-radius: 50%;
             height: 60px;
             width: 60px;
-            padding:7px 10px 5px 10px;
-            margin:6px;
+            padding: 7px 10px 5px 10px;
+            margin: 6px;
             text-align: center;
             background-image: radial-gradient(circle at 20px 20px, #f7fad4, #424237);
         }
@@ -113,46 +114,64 @@
             width: 40px;
         }
 
-        @media (max-width: 1280px) {
-            #eddigiszamok{
-                font-size:2.2vw;
-            }
-        }
+
         @media (max-width: 1100px) {
-            h1{
-                font-size:40px;
+            h1 {
+                font-size: 40px;
             }
-            h2{
-                font-size:30px;
+
+            h2 {
+                font-size: 30px;
             }
-            #balhasab,#jobbhasab{
-                font-size:16px;
+
+            #balhasab,
+            #jobbhasab {
+                font-size: 16px;
+            }
+
+            .circle {
+                font-size: 40px;
+            }
+
+            #nyeremeny img {
+                width: 30px;
             }
         }
-        @media (max-width: 930px) {
-            #balhasab,#jobbhasab{
-                float:none;
-                width:100%;
+
+        @media (max-width: 1030px) {
+
+            #balhasab,
+            #jobbhasab {
+                float: none;
+                width: 95%;
+                margin: 20px auto;
+                padding: 0 20px;
             }
+
+            #balhasab {
+                height: 640px;
+            }
+
+            #jobbhasab {
+                height: 520px;
+            }
+
+            #eddigiszamok {
+                font-size: 19px;
+            }
+
+            button {
+                margin-bottom: 15px;
+            }
+
         }
     </style>
 </head>
 
 <body>
-    <div id="balhasab">
-        <h1>Lottósorsolás</h1>
-        <div id="szam0" class="circle"></div>
-        <div id="szam1" class="circle"></div>
-        <div id="szam2" class="circle"></div>
-        <div id="szam3" class="circle"></div>
-        <div id="szam4" class="circle"></div>
-        <div>
-            <button onclick="sorsolas()">Sorsolás</button>
-            <div id="eddigiszamok"></div>
-        </div>
-    </div>
 
-    <div id="jobbhasab">
+
+    <div id="balhasab">
         <h2>Megtett számok</h2>
         <p><i>Állíts be öt, egymástól különböző számot 1 és 90 között, majd nyomd meg a Rögzítés gombot! Ezután a
                 Sorsolás gombbal megnézheted, hány találatod van!</i></p>
@@ -177,6 +196,19 @@
             <div id="eddigisorsolasok">Eddigi sorsolások száma: 0</div>
             <div id="legnagyobbterj">Legnagyobb terjedelem: -</div>
             <div id="legkisebbterj">Legkisebb terjedelem: -</div>
+        </div>
+    </div>
+
+    <div id="jobbhasab">
+        <h1>Lottósorsolás</h1>
+        <div id="szam0" class="circle"></div>
+        <div id="szam1" class="circle"></div>
+        <div id="szam2" class="circle"></div>
+        <div id="szam3" class="circle"></div>
+        <div id="szam4" class="circle"></div>
+        <div>
+            <button onclick="sorsolas()">Sorsolás</button>
+            <div id="eddigiszamok"></div>
         </div>
     </div>
 
