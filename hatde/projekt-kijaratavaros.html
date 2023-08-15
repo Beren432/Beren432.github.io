@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.jpg">
+    <link rel="stylesheet" href="projekt.css">
+    <link rel="stylesheet" href="style.css">
+    <title>hatdé - Kijárat a város felé</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html"><img src="images/logó1-removebg-preview.png"></a>
+        
+        <a href="projektek.html">Projektek</a>
+        <ul id="lista">
+            <li><a href="projekt-azvagyok.html">Az vagyok, akinek képzelem magam</a></li>
+            <li><a href="projekt-artformoney.html">Art for Money || Money for Art</a></li>
+            <li><a href="projekt-paramnezia.html">Paramnézia</a></li>
+            <li><a href="projekt-egymasmellett.html">Egymás mellett középen</a></li>
+            <li><a href="projekt-sohatobbe.html">Soha többé nem térek ide vissza</a></li>
+            <li><a href="projekt-kijaratavaros.html">Kijárat a város felé</a></li>
+            <li><a href="projekt-halesz.html">Ha lesz, nem leszek, amíg leszek, nem lesz</a></li>
+        </ul>
+        <a href="megjelenesek.html">Megjelenések</a>
+        <a href="elerhetoseg.html">Elérhetőség</a>
+        <div class="footer">Honlap &#169 Valló Gábor (2023)</div>
+    </nav>
+    <div class="fohasab">
+        <h2>Kijárat a város felé</h2>
+        <p>Zsikla Mónika művészettörténész, kurátor szövege a kiállításhoz</p>
+
+        <p>
+            ...Amikor rálépünk a kiállítótér hófödte padlójára a cím által sugallt fikció kézzelfogható valósággá
+            válik. A padlót teljesen befedő friss hó felülete teljesen érintetlen. Mindössze egyetlen nyomvonal
+            látható, amelyet a tér legtávolabbi pontjáig elgördült kőszikla hagyott maga után. A puha anyagon
+            (valójában vatelinen) hagyott nyomok kikerülik a városfalat és elvezetnek a tekintélyt parancsoló,
+            néma kősziklához. A szikla szinte megszemélyesül, antropomorf jelleget ölt. Kiszakadt természetes
+            környezetéből, elmozdult helyéről. Kijáratot keres a város felé. Az ember által teremtett, épített
+            környezet felé, ahol az építés legprimerebb anyaga a számtalan módon megművelt és hasznosított
+            kő. Az installáció hangeffektusait hallgatva rekonstruálhatóvá válik az a konkrét folyamat, amelynek
+            során a szikla erőfeszítést és fáradságot nem kímélve az erdőből eljutott a városba, egyenesen a
+            galéria terébe. A kőszikla persze nemcsak egy helyét kereső, magányos individuum metaforájaként
+            értelmezhető, hanem tekinthetünk rá egy Caspar David Friedrich festmény három dimenzióban
+            megelevenedő motívumaként is.
+        </p>
+
+        <p>
+            A galéria bejáratához közelebbi falfelületen Győri Blanka és Lipták Ágnes fényképei láthatók. Győri
+            Blanka fotografikus installációja finoman összekapcsolja a kövekhez kapcsolódó okkult passzusok
+            „útmutatásait” az urbánus környezetben tetten érhető, átmeneti állapotokkal. Lipták Ágnes fotó-
+            füzete pedig a kőszikla csodás megtalálásának körülményeit és gördüléseinek rögös útját dokumentálja.
+        </p>
+        <p><i>Kattints a képekre a galéria megnyitásához!</i></p>
+
+        <div class="galeria">
+            <img src="images/kijaratavaros/1.JPG" onclick="galeria(1,3,'kijaratavaros')">
+            <img src="images/kijaratavaros/2.JPG" onclick="galeria(2,3,'kijaratavaros')">
+            <img src="images/kijaratavaros/3.JPG" onclick="galeria(3,3,'kijaratavaros')">
+
+            <div id="myModal">
+                <div>Kijárat a város felé - galéria</div>
+                <span id="bezar" onclick="galeriaBezar()">&times;</span>
+                <span id="elozo" onclick="galeria(-2,3,'kijaratavaros')">&lt;</span>
+                <span id="kovetkezo" onclick="galeria(0,3,'kijaratavaros')">&gt;</span>
+                <img id="modal-image">
+            </div>
+        </div>
+        <footer>Honlap &#169 Valló Gábor (2023)</footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
