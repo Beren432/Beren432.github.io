@@ -26,7 +26,7 @@ function galeria(kep,maxKep,galeriaNev) {
     document.getElementById("kovetkezo").style.right = "35px";
   }
 
-  modalImg.src = "images/" + galeriaNev + "/" + aktualisKep + ".jpg";
+  modalImg.src = "images/" + galeriaNev + "/" + aktualisKep + ".JPG";
 }
 
 function galeriaBezar() {
