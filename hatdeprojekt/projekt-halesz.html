@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.jpg">
+    <link rel="stylesheet" href="projekt.css">
+    <link rel="stylesheet" href="style.css">
+    <title>hatdé - Ha lesz, nem leszek, amíg leszek, nem lesz</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html"><img src="images/logó1-removebg-preview.png"></a>
+        
+        <a href="projektek.html">Projektek</a>
+        <ul id="lista">
+            <li><a href="projekt-azvagyok.html">Az vagyok, akinek képzelem magam</a></li>
+            <li><a href="projekt-artformoney.html">Art for Money || Money for Art</a></li>
+            <li><a href="projekt-paramnezia.html">Paramnézia</a></li>
+            <li><a href="projekt-egymasmellett.html">Egymás mellett középen</a></li>
+            <li><a href="projekt-sohatobbe.html">Soha többé nem térek ide vissza</a></li>
+            <li><a href="projekt-kijaratavaros.html">Kijárat a város felé</a></li>
+            <li><a href="projekt-halesz.html">Ha lesz, nem leszek, amíg leszek, nem lesz</a></li>
+        </ul>
+        <a href="megjelenesek.html">Megjelenések</a>
+        <a href="elerhetoseg.html">Elérhetőség</a>
+        <div class="footer">Honlap &#169 Valló Gábor (2023)</div>
+    </nav>
+    <div class="fohasab">
+        <h2>Ha lesz, nem leszek, amíg leszek, nem lesz</h2>
+        <p>Leírás: A tér jellemzői (kisméretű pincetér) nagymértékben hozzájárultak a mű megjelenéséhez,
+            atmoszférájához. Az installációt, mely egy uszadék fából összeállított tutajból, rajta csomagokkal, illetve
+            a tutajon a tér két ellentétes szeglete felé fordított monitorból állt, kiegészítette a padlóra vetített,
+            mozgó illetve hullámzó víz érzetét keltő fényhatás.</p>
+        <p>A cím, „Ha lesz, nem leszek, amíg leszek, nem lesz” Epiktétosz, görög sztoikus filozófus gondolata, mely a
+            halálra vonatkozik, és nem ez az egyetlen idézet, melyet a kiállítás felhasznál a halálra vonatkozó utalások
+            tárházából. Gericault és Böcklin, obulus és a révész, mind olyan toposzok, melyek egyértelműségükkel
+            ellensúlyozzák a bárkán két képernyőn vetített gifek végpontjukat soha el nem érő (a homályba vagy egy
+            szimmetriatengelybe vesző) képsorait. A kiállítás egésze egy kimerevített pillanat, melyben egy két part
+            közé rekedt tutajon az elmúlás végessége ütközik a gif technikai adottságában rejlő végtelenséggel.</p>
+
+        <p>Győri Blanka írása Hitter Magdolna és Horváth Csilla installációjához:</p>
+
+        <p>
+            A Pince terébe lépve egy dobozokkal, kofferekkel megrakott tutajt látunk. Ami először eszembe jut:
+            idézetgyűjtemény. A megvilágítás színpadias-érzelmes, a tutaj szedett-vedett. Átevezünk a túlsó partra. A
+            címből is kihallatszik a halálra, gyászra való utalás.
+            A térben megjelenő tárgyak, videók jelképek: olyan, a halálhoz kapcsolódó képzetek, melyek mindenki számára
+            könnyen kódolhatók. Folyó, tutaj, csomagok, az obulus, Böcklin híres festménye.
+        </p>
+        <p>Felmerül az ellentmondás a Böcklin kép patetikussága és az installáció látszólagos esetlegessége között. A
+            különböző elemek összerendezése a halálhoz való viszonyunk összeszereltségére utal. Mi határozza meg ezt a
+            viszonyt? Például a romantikából ittmaradt érzések és ellentmondások, ahogy más alapfogalmaink és
+            viszonyulásaink is gyakran eredeztethetőek a 19. századból. A kofferek, dobozok, a sötétbarna szín már
+            inkább a 20. század elejét idézik. Az egymásra ácsolt képek körbejárása közben felmerül az a tapasztalat is,
+            ahogyan a halálhoz való viszonyunkban is gyakran kulturális sémákat használunk. Gyászhír esetén
+            összeillesztjük a helyzetre adható lehetséges válaszokat. Gondoljunk arra, hányféle szófordulattal szoktunk
+            reagálni egy halálhírre. Részvétem, sajnálom, és talán még van egy-két megszokott lehetőség. Kérdés, hogy a
+            gyász mennyiben válik aztán megélt és sajáttá tett tapasztalássá vagy marad a kézenfekvő szokások nem
+            feltétlen indokolt elismétlése.</p>
+
+
+        <p><i>Kattints a képekre a galéria megnyitásához!</i></p>
+
+        <div class="galeria">
+            <img src="images/halesz/1.JPG" onclick="galeria(1,3,'halesz')">
+            <img src="images/halesz/2.JPG" onclick="galeria(2,3,'halesz')">
+            <img src="images/halesz/3.JPG" onclick="galeria(3,3,'halesz')">
+            <img src="images/halesz/4.gif">
+            <img src="images/halesz/5.gif">
+
+            <div id="myModal">
+                <div>Ha lesz, nem leszek, amíg leszek, nem lesz - galéria</div>
+                <span id="bezar" onclick="galeriaBezar()">&times;</span>
+                <span id="elozo" onclick="galeria(-2,3,'halesz')">&lt;</span>
+                <span id="kovetkezo" onclick="galeria(0,3,'halesz')">&gt;</span>
+                <img id="modal-image">
+            </div>
+        </div>
+        <footer>Honlap &#169 Valló Gábor (2023)</footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
