@@ -112,16 +112,17 @@ footer a {
 
 /*gombok*/
 
-button {
+.button {
     display: block;
+    width:150px;
     margin: 20px auto 0 auto;
     padding: 10px 20px;
     border-radius: 10px;
-    border: none;
     font-family: Dosis, Arial, Helvetica, sans-serif;
     font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
+    text-align:center;
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid black;
     color: white;
@@ -129,7 +130,7 @@ button {
     transition: all 0.2s;
 }
 
-button:hover {
+.button:hover {
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 5px black;
 }

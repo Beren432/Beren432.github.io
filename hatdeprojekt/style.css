@@ -13,9 +13,7 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, rgb(192, 192, 192), white 220px);
-    background-attachment: fixed;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     height: 100vh;
 }
 
@@ -38,35 +36,37 @@ nav>a {
     font-size: 22px;
     font-weight: bold;
     color: black;
-    padding: 10px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 nav li {
     list-style-type: none;
-    font-size: 12px;
-    margin: 8px auto;
+    font-size: 13px;
+    margin: 4px auto;
 }
 
 nav img {
-    height: 170px;
+    height: 150px;
     border-radius: 50%;
-    background-color: rgb(220, 220, 220);
-    padding: 10px;
+    background-color: rgb(240, 240, 240);
+    padding: 7px;
 }
 
 nav img:hover {
     background-color: #e4deda;
 }
 
-.footer {
-    text-align: center;
-    color: grey;
-    font-style: italic;
-    font-size: 12px;
-    margin-top: 120px;
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 40;
 }
 
+ul.lista1,ul.lista2,ul.lista3{
+    display:none;
+}
 
 /*Főhasáb*/
 
@@ -76,7 +76,7 @@ nav img:hover {
     line-height: 24px;
     padding-right: 50px;
     text-align: justify;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 h1 {
@@ -104,7 +104,12 @@ p {
 }
 
 footer {
-    display: none;
+    display: block;
+    text-align: right;
+    color: grey;
+    font-style: italic;
+    font-size: 14px;
+    margin: 60px 0 10px 0;
 }
 
 
@@ -127,14 +132,20 @@ li a {
 
 .fohasab a:hover,
 li a:hover,
-nav>a:hover {
+nav>a:hover, nav span:hover {
     color: #A1887F;
+    cursor:pointer;
 }
 
 .ikon {
     display: block;
     height: 25px;
     margin-right: 10px;
+}
+
+#kozoskep{
+    width:400px;
+    filter:brightness(120%);
 }
 
 /*Főoldal fader animáció*/
@@ -150,7 +161,6 @@ nav>a:hover {
     display: inline-block;
     width: 24%;
     height: 195px;
-    box-shadow: 0 20px 20px -20px grey;
     position: relative;
     overflow: hidden;
 }
@@ -261,11 +271,11 @@ nav>a:hover {
 
     .footer,
     nav li {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .fohasab {
-        font-size: 13px;
+        font-size: 14px;
         line-height: 20px;
     }
 
@@ -297,7 +307,7 @@ nav>a:hover {
         line-height: 20px;
         float: none;
         width: 100%;
-        font-size: 12px;
+        font-size: 13px;
     }
 
     nav {
@@ -312,20 +322,7 @@ nav>a:hover {
         left: 50px;
         height: 70px;
         padding: 5px;
-    }
-
-    .footer {
-        display: none;
-    }
-
-    footer {
-        display: block;
-        text-align: right;
-        color: grey;
-        font-style: italic;
-        font-size: 12px;
-        margin-top: 35px;
-    }
+    } 
 
     nav>a:first-child {
         margin-left: 105px;
@@ -339,10 +336,12 @@ nav>a:hover {
         height: 205px;
     }
 
+/* ezt a JS változtatja meg!
+
     #modal-image {
         height: auto;
         width: 90%;
-    }
+    }*/
 }
 
 @media (max-width: 925px) {
@@ -435,6 +434,9 @@ nav>a:hover {
     #myModal div{
         font-size:15px;
     }
+    #kozoskep{
+        width:300px;
+    }
 }
 
 @media (max-width: 420px) {
@@ -452,5 +454,8 @@ nav>a:hover {
     }
     #myModal div{
         font-size:13px;
+    }
+    #kozoskep{
+        width:250px;
     }
 }

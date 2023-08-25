@@ -1,14 +1,13 @@
 .flexcontainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .projekt {
-    width: 32%;
+    width: 31%;
     height: 240px;
-    box-shadow: 0 20px 20px -20px grey;
-    margin: 20px 0;
+    margin: 20px 20px 0 0;
     text-align: center;
     background-size: 130%;
     background-position: center center;
@@ -44,6 +43,33 @@
     background-image: url("images/fader2.jpg");
 }
 
+#openpool {
+    background-image: url("images/fader10.jpg");
+}
+
+#fok90 {
+    background-image: url("images/fader4.jpg");
+}
+
+#szobemlek {
+    background-image: url("images/fader3.jpg");
+}
+
+#makingbed {
+    background-image: url("images/makbed.jpg");
+}
+
+#fenylab {
+    background-image: url("images/fenylab.jpg");
+}
+
+#hexa {
+    background-image: url("images/hexa.jpg");
+}
+#hullam {
+    background-image: url("images/hullamlab.jpg");
+}
+
 .projekt a {
     background-color: rgba(245, 241, 236, 0.8);
     position: absolute;
@@ -58,22 +84,21 @@
 }
 
 
-.galeria{
+.galeria {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin:20px auto;
+    margin: 20px auto;
 }
 
-.galeria > img {
-    height:200px;
+.galeria>img {
+    height: 200px;
     cursor: pointer;
     margin: 10px 20px 10px 0;
-    box-shadow: 0 20px 20px -20px grey;
     transition: opacity 0.2s;
 }
 
-.galeria > img:hover {
+.galeria>img:hover {
     opacity: 70%;
 }
 
@@ -97,9 +122,12 @@
 /* Modal Content (image) */
 #modal-image {
     margin: auto;
+    position: relative;
+/*    top: 48%;
+    transform: translateY(-50%);*/
     display: block;
     height: 95%;
-    max-width:90%;
+    max-width: 90%;
     animation-name: zoom;
     animation-duration: 0.6s;
 }
@@ -116,12 +144,12 @@
 }
 
 
-#myModal div{
-    position:absolute;
-    top:15px;
-    left:15px;
+#myModal div {
+    position: absolute;
+    top: 15px;
+    left: 15px;
     color: #f1f1f1;
-    font-size:18px;
+    font-size: 18px;
     font-weight: normal;
 }
 
@@ -142,12 +170,14 @@
 
 #elozo {
     top: 50%;
-    left: 35px;   
+    left: 35px;
+    z-index: 2;
 }
 
 #kovetkezo {
     top: 50%;
-    right: 35px;  
+    right: 35px;
+    z-index: 2;
 }
 
 #myModal span:hover,

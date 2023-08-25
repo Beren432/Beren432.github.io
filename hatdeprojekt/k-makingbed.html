@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="projekt.css">
+    <link rel="stylesheet" href="style.css">
+    <title>hatdé - Making the bed</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html"><img src="images/logó1-removebg-preview.png" title="logó" alt="hatdé logó"></a>
+        <a href="kiallitasok.html">Kiállítások</a>
+        <span class="material-symbols-rounded lista1" onclick="navbar('lista1','lista2','lista3')">keyboard_double_arrow_up</span>  
+
+        <ul class="lista1" style="display:block">
+            <li><a href="k-azvagyok.html">Az vagyok, akinek képzelem magam</a></li>
+            <li><a href="k-paramnezia.html">Paramnézia</a></li>
+            <li><a href="k-egymasmellett.html">Egymás mellett középen</a></li>
+            <li><a href="k-makingbed.html">Making the bed</a></li>
+            <li><a href="k-sohatobbe.html">Soha többé nem térek ide vissza</a></li>
+            <li><a href="k-kijaratavaros.html">Kijárat a város felé</a></li>
+            <li><a href="k-halesz.html">Ha lesz, nem leszek, amíg leszek, nem lesz</a></li>
+        </ul>
+        <a href="projektek.html">Projektek</a>
+        <span class="material-symbols-rounded lista2" onclick="navbar('lista2','lista1','lista3')">keyboard_double_arrow_down</span>
+        <ul class="lista2">
+            <li><a href="p-90fok.html">90 fok</a></li>
+            <li><a href="p-szobeml.html">Kompozíció '56</a></li>
+            <li><a href="p-fenylab.html"><i>Fénylabirintus (terv)</i></a></li>
+            <li><a href="p-hexa.html"><i>Hexa (terv)</i></a></li>
+            <li><a href="p-hullam.html"><i>Hullámlabirintus (terv)</i></a></li>
+        </ul>
+        <a href="esemenyek.html">Események</a>
+        <span class="material-symbols-rounded lista3" onclick="navbar('lista3','lista1','lista2')">keyboard_double_arrow_down</span>
+
+        <ul class="lista3">
+            <li><a href="e-artformoney.html">Art for Money || Money for Art</a></li>
+            <li><a href="e-openpool.html">Open Pool Festival</a></li>
+        </ul>
+        <a href="megjelenesek.html">Megjelenések</a>
+        <a href="elerhetoseg.html">Elérhetőség</a>
+    </nav>
+    <div class="fohasab">
+        <h2>Making the bed</h2>
+        <p>
+            Hitter Magdolna és Ilka Rita kiállítás koncepciójával az alvás állapotát idézte, egy olyan önkívületi - ciklikus
+            - stádiumot, amely létfontosságú az élethez.
+        </p>
+        <p>Ezt az állapotot mindenki csak egyedül élheti át, azonban nem egyedüliként.</p>
+        <p>
+            Hitter Magdolna három csatornás videómunkája, heverője és Ilka Rita arclenyomatokat ábrázoló képe kiegészítették
+            egymást. Míg a videók az alváskor elfoglalt pozíciók térben történő megjelenítésével kísérleteztek, addig a
+            képek a videókban bemutatott pozícióknak illetve mozgásoknak a lenyomatait mutatták meg. Hitter installációjában
+            három nézőpont egyesült: a videók felvételekor a művész által elfoglalt pozíciók, illetve a látogató pozíciói a
+            kiállított heverőn, és végül a galéria terében szabadon mozgó befogadó helyzete határozta meg a munkát. Ilka
+            Rita munkája az alvás folyamata közben “otthagyott” arclenyomatok képe egy párnahuzaton, a kiállítótérben
+            vászonként kifeszítve, mementóként jelent meg.
+        </p>
+
+        <p><i>Kattints a képekre a galéria megnyitásához!</i></p>
+
+        <div class="galeria">
+            <img src="images/makingbed/1.jpg" onclick="galeria(1,9,'makingbed')">
+            <img src="images/makingbed/2.jpg" onclick="galeria(2,9,'makingbed')">
+            <img src="images/makingbed/3.jpg" onclick="galeria(3,9,'makingbed')">
+            <img src="images/makingbed/4.jpg" onclick="galeria(3,9,'makingbed')">
+            <img src="images/makingbed/5.jpg" onclick="galeria(3,9,'makingbed')">
+            <img src="images/makingbed/6.jpg" onclick="galeria(3,9,'makingbed')">
+            <img src="images/makingbed/7.jpg" onclick="galeria(3,9,'makingbed')">
+            <img src="images/makingbed/8.jpg" onclick="galeria(3,9,'makingbed')">
+            <img src="images/makingbed/9.jpg" onclick="galeria(3,9,'makingbed')">
+
+            <div id="myModal">
+                <div>Making the bed - galéria</div>
+                <span id="bezar" onclick="galeriaBezar()">&times;</span>
+                <span id="elozo" onclick="galeria(-2,9,'makingbed')">&lt;</span>
+                <span id="kovetkezo" onclick="galeria(0,9,'makingbed')">&gt;</span>
+                <img id="modal-image">
+            </div>
+        </div>
+        <footer>Honlap &#169; Valló Gábor (2023)</footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
