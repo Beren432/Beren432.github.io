@@ -36,31 +36,47 @@
 
         <form>
             <b>Személyes adatok</b><br>
-            <label for="nev">Név:</label>
-            <input type="text" id="nev" name="nev" required><br>
-
-            <label for="email">E-mail cím:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="telefon">Telefonszám:</label>
-            <input type="tel" id="telefon" name="telefon" required><br><br>
+            <table>
+                <tr>
+                    <td><label for="nev">Név:</label></td>
+                    <td><input type="text" id="nev" name="nev" required></td>
+                </tr>                
+                <tr>
+                    <td><label for="email">E-mail cím:</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>               
+                <tr>
+                    <td><label for="telefon">Telefonszám:</label></td>
+                    <td><input type="tel" id="telefon" name="telefon" required></td>
+                </tr>
+            </table><br>
 
             <b>Foglalás adatai</b><br>
-            <label for="nap">Nap:</label>
-            <input type="date" id="nap" name="nap" required><br>
-
-            <label for="ido">Pontos időpont:</label>
-            <input type="time" id="ido" name="ido" required><br>
-
-            <label for="szam">Vendégek száma:</label>
-            <select id="szam" name="szam" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-            </select><br><br>
+            <table>
+                <tr>
+                    <td><label for="nap">Nap:</label></td>
+                    <td><input type="date" id="nap" name="nap" required></td>
+                </tr>
+    
+                <tr>
+                    <td><label for="ido">Pontos időpont:</label></td>
+                    <td><input type="time" id="ido" name="ido" required></td>
+                </tr>
+    
+                <tr>
+                    <td><label for="szam">Vendégek száma:</label></td>
+                    <td>
+                        <select id="szam" name="szam" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </td>
+                </tr>
+            </table><br>
 
             <b>Megjegyzés</b><br>
             <textarea name="megjegyzes">               
@@ -73,7 +89,7 @@
             
         </form>
         <footer>
-            Reszponzív honlap. Inspiráció & szöveg: <a href="https://ujpestikakukk.hu/">Kakukk Vendéglő</a>. Készítette Valló Gábor (2023)
+            Inspiráció & szöveg: <a href="https://ujpestikakukk.hu/">Kakukk Vendéglő</a>. Készítette Valló Gábor (2023)
         </footer>
     </div>
 </body>

@@ -1,3 +1,5 @@
+/*Alapvető beállítások*/
+
 * {
     padding: 0;
     margin: 0;
@@ -14,8 +16,10 @@
     src: url(fonts/Raleway-VariableFont_wght.ttf);
 }
 
+html {
+    scroll-behavior: smooth;
+  }  
 
-/*Alapvető beállítások*/
 body {
     font-family: Raleway, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
@@ -39,6 +43,7 @@ h2 {
 
 .tartalom {
     width: 85%;
+    min-height:90.9vh;
     margin: auto;
     background-color: antiquewhite;
     padding: 50px 50px 0px 50px;
@@ -60,11 +65,15 @@ p {
 }
 
 .asztalfogl {
+    padding:7px 0;
     width: 70%;
     margin: auto;
     background-image: linear-gradient(to right, antiquewhite, rgba(169, 50, 38, 0.5), antiquewhite);
 }
 
+.asztalfogl h2{
+    margin: 3px 0;
+} 
 .asztalfogl img {
     height: 24px;
 }
@@ -154,7 +163,7 @@ select {
     padding: 3px;
     outline: none;
     font-size: 16px;
-    margin-bottom: 3px;
+    margin: 0px 0px 3px 5px;
 }
 
 input:focus,
@@ -169,8 +178,12 @@ input[type=submit] {
     border: 1px solid black;
     color: white;
     border-radius: 3px;
-    padding: 5px;
+    padding: 7px 15px;
     box-shadow: 2px 2px 5px grey;
+    transition:background-color 0.2s;
+}
+input[type=submit]:hover{
+    background-color: #89291f;
 }
 
 
@@ -550,7 +563,7 @@ input[type=submit] {
 
     .menutartalom a {
         color: white;
-        background-color: #A93226;
+        background-color: #b9372a;
         padding: 8px 16px;
         text-decoration: none;
         display: block;

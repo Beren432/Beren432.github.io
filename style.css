@@ -15,9 +15,7 @@ body {
     background-image: url("images/4853433.jpg");
     background-size: cover;
     background-attachment: fixed;
-
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    scroll-behavior: smooth;
 }
 
 .tartalom {
@@ -59,6 +57,9 @@ a {
     color: white;
     font-weight: bold;
 }
+a:hover{
+    color: rgb(230,230,230);
+}
 
 footer a {
     color: grey;
@@ -72,7 +73,7 @@ footer a {
     top: 80px;
     height: 140px;
     width: 100%;
-    background-color: #FFEE58;
+    background-color: rgba(255,238,88,0.8); /*#FFEE58;*/
     z-index: -1;
     box-shadow: 3px 3px 5px gray;
 }
@@ -101,7 +102,7 @@ footer a {
     border-radius: 50%;
     box-shadow: 0 0 30px grey;
     transition: all 0.3s;
-    filter: saturate(70%);
+    filter: saturate(80%);
 }
 
 #nevjegy img:hover {
@@ -174,7 +175,7 @@ footer a {
 }
 
 #bemutatkozas {
-    background-color: #92C060;
+    background-color: rgba(146,192,96,0.8); /*#92C060;*/
     color: #B8D697;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -182,17 +183,17 @@ footer a {
 }
 
 #tudas {
-    background-color: #D4A46A;
+    background-color: rgba(212,164,106,0.8); /*#D4A46A;*/
     color: #E5C8A5;
 }
 
 #projektek {
-    background-color: #B95C7E;
+    background-color: rgba(185,92,126,0.8); /*#B95C7E;*/
     color: #D092A8;
 }
 
 #kapcsolat {
-    background-color: #6F90A2;
+    background-color: rgba(111,144,162,0.8); /*#6F90A2;*/
     color: #9DB4C0;
 }
 
