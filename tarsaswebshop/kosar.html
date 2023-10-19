@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Társasjáték Webshop</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><b>TÁRSASJÁTÉK WEBSHOP</b></li>
+            <li><a href="index.html">Társasjátékok</a></li>
+            <li><a id="bejelentkezes" onclick="bejelentkezoAblak(event)">Bejelentkezés</a></li>
+            <li><a id="kijelentkezes" onclick="kosarTorlese(event,1)">Kijelentkezés</a></li>
+            <li><a id="regisztracio">Regisztráció</a></li>
+            <li><a id="kosar">Kosár</a></li>
+            <li><a id="admin">Admin</a></li>
+        </ul>
+    </header>
+    <div id="tartalom">
+        <h1>Kosár</h1>
+
+        <div id="bejelentkezo-oldal-hatter"></div>
+
+        <p id="rendelesszoveg"></p>
+        <table class="table" id="rendelestablazat">
+            <tr>
+                <th>Társasjáték neve</th>
+                <th>Ár (Ft)</th>
+                <th>Rendelt mennyiség (db)</th>
+            </tr>
+        </table>
+        <p id="rendelesosszege"></p>
+    </div>
+    <footer>Honlap &copy; Valló Gábor (2023)</footer>
+    <script src="main.js"></script>
+    <script src="kosar.js"></script>
+</body>
+
+</html>

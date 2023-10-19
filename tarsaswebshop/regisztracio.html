@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Társasjáték Webshop</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><b>TÁRSASJÁTÉK WEBSHOP</b></li>
+            <li><a href="index.html">Társasjátékok</a></li>
+            <li><a id="bejelentkezes" onclick="bejelentkezoAblak(event)">Bejelentkezés</a></li>
+            <li><a id="kijelentkezes" onclick="kosarTorlese(event,1)">Kijelentkezés</a></li>
+            <li><a id="regisztracio">Regisztráció</a></li>
+            <li><a id="kosar">Kosár</a></li>
+            <li><a id="admin">Admin</a></li>
+        </ul>
+    </header>
+    <div id="tartalom">
+        <div id="bejelentkezo-oldal-hatter"></div>
+        <h1>Regisztráció</h1>
+    
+    
+        <form onsubmit="regisztracio(event)">
+            <h3 style="text-align:left">Bejelentkezési adatok</h3>
+            <p>Ezekkel az adatokkal tudsz majd belépni. <b><i>Csak kis- és nagybetűket, valamint számokat használj!</i></b></p>
+    
+            <table>
+                <tr>
+                    <td><label for="felhnev">Felhasználó neved (min. 3, max. 12 karakter):</label> </td>
+                    <td><input type="text" id="felhnev" name="felhnev" required pattern="[A-Za-z0-9]{3,12}"></td>
+                </tr>
+                <tr>
+                    <td><label for="felhjelszo1">Jelszavad (min. 5, max. 12 karakter):</label> </td>
+                    <td><input type="password" id="felhjelszo1" name="felhjelszo1" required pattern="[A-Za-z0-9]{5,12}"></td>
+                </tr>
+                <tr>
+                    <td><label for="felhjelszo2">Jelszavad újra:</label></td> 
+                    <td><input type="password" id="felhjelszo2" name="felhjelszo2" required pattern="[A-Za-z0-9]{5,12}"></td>
+                </tr>
+            </table><br>
+            
+            <h3 style="text-align:left">Statisztikai adatok</h3>
+            <p>Ezek az adatok a statisztikához szükségesek.</p><br>
+    
+            <div class="flex">
+                <div>
+                    <p><b>Nemed:</b></p>
+                    <input type="radio" id="ferfi" name="felhneme" value="true" required>
+                    <label for="ferfi">férfi</label><br>
+                    <input type="radio" id="no" name="felhneme" value="false" required>
+                    <label for="no">nő</label><br><br>
+                </div>
+        
+                <div>
+                    <p><b>Korcsoportod:</b></p>
+                    <input type="radio" id="ev10s" name="felhkora" value="20 alatt" required>
+                    <label for="ev10s">20 év alatt</label><br>
+                    <input type="radio" id="ev20s" name="felhkora" value="20-29" required>
+                    <label for="ev20s">20-29 év</label><br>
+                    <input type="radio" id="ev30s" name="felhkora" value="30-39" required>
+                    <label for="ev30s">30-39 év</label><br>
+                    <input type="radio" id="ev40s" name="felhkora" value="40-49" required>
+                    <label for="ev40s">40-49 év</label><br>
+                    <input type="radio" id="ev50s" name="felhkora" value="50-59" required>
+                    <label for="ev50s">50-59 év</label><br>
+                    <input type="radio" id="ev60s" name="felhkora" value="59 fölött" required>
+                    <label for="ev60s">60+ év</label><br><br>
+                </div>
+                
+                <div>
+                    <p><b>Hány éve játszol:</b></p>
+                    <input type="radio" id="jat0" name="felhtapasztalata" value="kezdő" required>
+                    <label for="jat0">most kezdem</label><br>
+                    <input type="radio" id="jat1" name="felhtapasztalata" value="1-2" required>
+                    <label for="jat1">1-2 éve</label><br>
+                    <input type="radio" id="jat2" name="felhtapasztalata" value="3-5" required>
+                    <label for="jat2">3-5 éve</label><br>
+                    <input type="radio" id="jat3" name="felhtapasztalata" value="6-9" required>
+                    <label for="jat3">6-9 éve</label><br>
+                    <input type="radio" id="jat4" name="felhtapasztalata" value="10-15" required>
+                    <label for="jat4">10-15 éve</label><br>
+                    <input type="radio" id="jat5" name="felhtapasztalata" value="15 fölött" required>
+                    <label for="jat5">16+ éve</label><br>
+                </div>
+            </div>
+           
+    <!--       
+            Kedvenc társasjáték-típusaid (többet is bejelölhetsz):
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Fantasy</label>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Sci-fi</label>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Gazdálkodós</label>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Euró</label>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Háborús</label>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Történelmi</label>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Stratégia</label>
+            <button type="submit">Regisztrálok</button>-->
+    
+            <input type="submit" style="background-color:gold" value="Regisztráció">
+        </form>
+    </div>
+
+    <footer>Honlap &copy; Valló Gábor (2023)</footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

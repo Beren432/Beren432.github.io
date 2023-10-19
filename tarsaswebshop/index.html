@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Társasjáték Webshop</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><b>TÁRSASJÁTÉK WEBSHOP</b></li>
+            <li><a href="index.html">Társasjátékok</a></li>
+            <li><a id="bejelentkezes" onclick="bejelentkezoAblak(event)">Bejelentkezés</a></li>
+            <li><a id="kijelentkezes" onclick="kosarTorlese(event,1)">Kijelentkezés</a></li>
+            <li><a id="regisztracio">Regisztráció</a></li>
+            <li><a id="kosar">Kosár</a></li>
+            <li><a id="admin">Admin</a></li>
+        </ul>
+    </header>
+    <div id="tartalom">
+        <div id="bejelentkezo-oldal-hatter"></div>
+        <h1>Üdvözöllek a Társasjáték Webshopban!</h1>
+        <div id="udvozlet"></div>
+
+
+        <h2>Keresés</h2>
+        <div id="kereso">
+            <form onsubmit="tarsasMegjelenito(event)">
+
+                <table id="keresotablazat">
+                    <tr>
+                        <td>
+                            <label for="kernev">Név vagy névrészlet:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="kernev" name="kernev">
+                        </td>
+                        <td>
+                            <label for="kerkiadev">Kiadás éve:</label>
+                        </td>
+                        <td> <input type="number" id="kerkiadevmin" name="kerkiadev" value="1995" min="1995"
+                                max="2023">-tól
+                            <input type="number" id="kerkiadevmax" name="kerkiadev" value="2023" min="1995"
+                                max="2023">-ig
+                        </td>
+                        <td>
+                            <label for="kermaxjatekos">Játékosok száma:</label>
+                        </td>
+                        <td> <input type="number" id="kerjatmin" name="kermaxjatekos" value="1" min="1" max="7">-tól
+                            <input type="number" id="kerjatmax" name="kermaxjatekos" value="7" min="1" max="7">-ig
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="kerminjatekido">Min. játékidő (perc):</label>
+                        </td>
+                        <td> <input type="number" id="keridomin" name="kerminjatekido" value="10" min="10" max="180"
+                                step="10">-tól
+                            <input type="number" id="keridomax" name="kerminjatekido" value="180" min="10" max="180"
+                                step="10">-ig
+                        </td>
+                        <td>
+                            <label for="kerminjatkor">Ajánlott életkor:</label>
+                        </td>
+                        <td> <input type="number" id="kerjatkormin" name="kerminjatkor" value="6" min="6" max="18"
+                                step="2">-tól
+                            <input type="number" id="kerjatkormax" name="kerminjatkor" value="18" min="6" max="18"
+                                step="2">-ig
+                        </td>
+                        <td>
+                            <label for="kerneh">Nehézség:</label>
+                        </td>
+                        <td> <input type="number" id="kernehmin" name="kerneh" value="1" min="1" max="5" step="0.5">-tól
+                            <input type="number" id="kernehmax" name="kerneh" value="5" min="1" max="5" step="0.5">-ig
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Téma:
+                        </td>
+                        <td colspan="5"> 
+                            <input type="checkbox" id="kertema0" name="kertema0" value="absztrakt" checked>
+                            <label for="kertema0">absztrakt</label>
+                            <input type="checkbox" id="kertema1" name="kertema1" value="fantasy" checked>
+                            <label for="kertema1">fantasy</label>
+                            <input type="checkbox" id="kertema2" name="kertema2" value="gazdasági" checked>
+                            <label for="kertema2">gazdasági</label>
+                            <input type="checkbox" id="kertema3" name="kertema3" value="horror" checked>
+                            <label for="kertema3">horror</label>
+                            <input type="checkbox" id="kertema4" name="kertema4" value="sci-fi" checked>
+                            <label for="kertema4">sci-fi</label>
+                            <input type="checkbox" id="kertema5" name="kertema5" value="társadalmi" checked>
+                            <label for="kertema5">társadalmi</label>
+                            <input type="checkbox" id="kertema6" name="kertema6" value="természet" checked>
+                            <label for="kertema6">természet</label>
+                            <input type="checkbox" id="kertema7" name="kertema7" value="történelmi" checked>
+                            <label for="kertema7">történelmi</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Típus:
+                        </td>
+                        <td colspan="5"> <input type="checkbox" id="kertipus1" name="kertipus1" value="euró" checked>
+                            <label for="kertipus1">euró</label>
+                            <input type="checkbox" id="kertipus2" name="kertipus2" value="háborús" checked>
+                            <label for="kertipus2">háborús</label>
+                            <input type="checkbox" id="kertipus3" name="kertipus3" value="kaland" checked>
+                            <label for="kertipus3">kaland</label>
+                            <input type="checkbox" id="kertipus4" name="kertipus4" value="kártya" checked>
+                            <label for="kertipus4">kártya</label>
+                            <input type="checkbox" id="kertipus5" name="kertipus5" value="parti" checked>
+                            <label for="kertipus5">parti</label>
+                            <input type="checkbox" id="kertipus6" name="kertipus6" value="stratégia" checked>
+                            <label for="kertipus6">stratégia</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Rendezés:
+                        </td>
+                        <td colspan="3"> <select name="rendezes">
+                                <option value="abcsorrend" selected>ábécésorrend</option>
+                                <option value="arszerint">ár szerint növekvő (olcsóbbak elöl)</option>
+                                <option value="evszerint">év szerint csökkenő (újabbak elöl)</option>
+                            </select>
+                        </td>
+                        <td><button type="submit" style="background-color:lightgrey">Keresés</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <h2>Társasjátékok listája</h2>
+        <div class="flexlista" id="tarsasoklistaja">
+        </div>
+
+        <div id="tarsasadatok"></div>
+    </div>
+    </div>
+    <footer>Honlap &copy; Valló Gábor (2023)</footer>
+    <script src="main.js"></script>
+    <script src="tarsas.js"></script>
+</body>
+
+</html>

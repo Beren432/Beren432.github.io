@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Társasjáték Webshop</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><b>TÁRSASJÁTÉK WEBSHOP</b></li>
+            <li><a href="index.html">Társasjátékok</a></li>
+            <li><a id="bejelentkezes" onclick="bejelentkezoAblak(event)">Bejelentkezés</a></li>
+            <li><a id="kijelentkezes" onclick="kosarTorlese(event,1)">Kijelentkezés</a></li>
+            <li><a id="regisztracio">Regisztráció</a></li>
+            <li><a id="kosar">Kosár</a></li>
+            <li><a id="admin">Admin</a></li>
+        </ul>
+    </header>
+    <div id="tartalom">
+        <div id="bejelentkezo-oldal-hatter"></div>
+        <h1>Statisztika</h1>
+
+        <p><i>Megjegyzés: Normál esetben természetesen csak az admin jogosultsággal rendelkezők láthatnák ezt az oldalt,
+                de most a gyakorlás kedvéért bármely bejelentkezett felhasználó megnézheti.</i></p>
+
+        <h2>Felhasználók</h2>
+        <p>Összes felhasználó: <span id="osszesuser"></span></p>
+        <div class="flexlista">
+            <div class="diagram-oszlop"><br>
+                <p>Nemek aránya:<br> <span id="osszesferfi"></span></p><br>
+                <div id="diagram-nemek"></div>
+            </div>
+            <div class="diagram-oszlop">
+                <p>Korcsoportok aránya:<br> <span id="osszeskor"></span></p><br>
+                <div id="diagram-korok"></div>
+            </div>
+            <div class="diagram-oszlop">
+                <p>Játékos tapasztalat aránya:<br> <span id="osszestapasztalat"></span></p><br>
+                <div id="diagram-tapasztalat"></div>
+            </div>
+        </div><br>
+
+        <table class="table" id="felhtablazat">
+            <tr>
+                <th>Id</th>
+                <th>Felhasználó neve</th>
+                <th>Nem</th>
+                <th>Korcsoport</th>
+                <th>Hány éve játszik</th>
+            </tr>
+        </table>
+
+        <p>Törölni szeretném a(z) <input type="number" id="felhtorlesid" min="1" value="1"> id-jű felhasználót.
+            (Figyelem: saját magadat nem törölheted!)
+        <button onclick="felhTorlese()" style="background-color: firebrick">Felhasználó törlése</button></p>
+
+        <h2>Társasjátékok</h2>
+
+        <p>Összes társasjáték: <span id="osszestarsas"></span></p>
+        <p>Összes raktáron lévő játék: <span id="osszesraktaron"></span></p>
+        <p>Raktáron lévő játékok összesített értéke: <span id="osszesar"></span></p><br>
+        <button onclick="tarsasAdatBevitel(event,0)" style="background-color: gold">Új társasjáték felvétele</button><br><br>
+        <div id="befoglalo">
+            <table class="table" id="tarsastablazat">
+                <tr>
+                    <th>Id</th>
+                    <th>Társasjáték neve</th>
+                    <th>Téma, típus</th>
+                    <th>Kiadás éve</th>
+                    <th>Tervező neve</th>
+                    <th>Max. játékosszám</th>
+                    <th>Játékidő (perc)</th>
+                    <th>Hány éves kortól</th>
+                    <th>Nehézség</th>
+                    <th>Ár (Ft)</th>
+                    <th>Raktáron van (db)</th>
+                </tr>
+            </table>
+        </div>
+
+        <p>Módosítani szeretném a(z) <input type="number" id="tarsasmodositid" min="1" value="1"> id-jű társasjáték
+            adatait.
+        <button onclick="tarsasAdatBevitel(event,1)" style="background-color: dodgerblue">Adatok módosítása</button></p>
+
+        <div id="tarsasadat-hatter">
+            <div id="tarsasadatokmegadasa">
+                <h3>TÁRSASJÁTÉK ADATAI</h3>
+                <p class="kisbetu">Az adatok kitöltéséhez használd a BoardGameGeek oldalt!</p>
+                <table id="rendezes">
+                    <tr>
+                        <td>Id: </td>
+                        <td id="id"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tnev">Név:</label></td>
+                        <td><input type="text" id="tnev" name="tnev" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tkiadev">Kiadás éve:</label></td>
+                        <td><input type="number" id="tkiadev" name="tkiadev" required min="1995" max="2023"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ttervezo">Tervező:</label></td>
+                        <td><input type="text" id="ttervezo" name="ttervezo" required>
+                        <p class="kisbetu">Csak egy nevet írj be!</p></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tmaxjatekos">Max. játékosszám:</label></td>
+                        <td><input type="number" id="tmaxjatekos" name="tmaxjatekos" required min="1" max="7"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tminjatekido">Min. játékidő (perc):</label></td>
+                        <td><input type="number" id="tminjatekido" name="tminjatekido" required min="10" max="180" step="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tminjatkor">Hány éves kortól ajánlott:</label></td>
+                        <td><input type="number" id="tminjatkor" name="tminjatkor" required min="6" max="18" step="2"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ttema">Téma:</label></td>
+                        <td><select name="ttema" id="ttema" required>
+                            <option value="absz">absztrakt</option>
+                            <option value="fan">fantasy</option>
+                            <option value="gaz">gazdasági</option>
+                            <option value="hor">horror</option>
+                            <option value="sf">sci-fi</option>
+                            <option value="tar">társadalmi</option>
+                            <option value="ter">természet</option>
+                            <option value="tor">történelmi</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ttipus">Típus:</label></td>
+                        <td><select name="ttipus" id="ttipus" required>
+                            <option value="eur">euró</option>
+                            <option value="hab">háborús</option>
+                            <option value="kal">kaland</option>
+                            <option value="kar">kártya</option>
+                            <option value="par">parti</option>
+                            <option value="str">stratégia</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tneh">Nehézség (1-5):</label></td>
+                        <td><input type="number" id="tneh" name="tneh" required min="1" max="5" step="0.5"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tar">Ár (Ft):</label></td>
+                        <td><input type="number" id="tar" name="tar" required min="5000" max="40000" step="500"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="traktar">Raktáron van (db):</label></td>
+                        <td><input type="number" id="traktar" name="traktar" required min="1" max="15"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tbggkep">BoardGameGeek kép linkje:</label></td>
+                        <td><input type="text" id="tbggkep" name="tbggkep" required size="60">
+                            <p class="kisbetu">A játék BGG oldalán jobb klikkel nyisd meg a játék képét egy új ablakban, majd az <b>"https://cf.geekdo-images.com/"</b> utáni részt másold ki, ez pl. a Catannál "W3Bsga_uLP9kO91gZ7H8yw__imagepage/img/M_3Vg1j2HlNgkv7PL2xl2BJE2bw=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2419375.jpg"</p></td>
+                    </tr>
+                    <tr>
+                        <td><label for="tbggid">BoardGameGeek oldal linkje:</label></td>
+                        <td><input type="text" id="tbggid" name="tbggid" required size="30">
+                            <p class="kisbetu">A játék BGG oldalán a <b>"https://boardgamegeek.com/boardgame/"</b> utáni részt másold ki, ez pl. a Catannál "13/catan"</p></td>
+                    </tr>
+                </table>
+
+                <button id="adatokteendo"></button>
+                <button onclick="ablakBezarasa(2)">Bezárás</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>Honlap &copy; Valló Gábor (2023)</footer>
+    <script src="main.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

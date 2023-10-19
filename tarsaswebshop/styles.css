@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: beige;
+}
+
+#tartalom {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    transition: width .5s;
+}
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex div {
+    margin-right: 60px;
+}
+
+/*Header (menü)*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: -2px 2px 5px black;
+}
+
+ul {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+li:first-child {
+    font-size: 16px;
+    padding-top: 4px;
+    color: orange;
+}
+
+li {
+    list-style-type: none;
+    font-size: 20px;
+}
+
+a:hover {
+    color: antiquewhite;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.rejtett {
+    color: grey;
+}
+
+.rejtett:hover {
+    color: grey;
+    cursor: default;
+}
+
+#bejelentkezes,
+#kijelentkezes {
+    cursor: pointer;
+}
+
+/*Szövegformázások*/
+
+h1 {
+    margin: 80px 0 10px 0;
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 20px 0 10px 0;
+}
+
+h3 {
+    text-align: center;
+}
+
+footer {
+    margin: 0 20px 10px 0;
+    color: grey;
+    text-align: right;
+}
+
+input,
+select {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+input[type="checkbox"]{
+    margin-left:20px;
+}
+input[type="checkbox"]:first-child{
+    margin-left:0;
+}
+input:focus,
+select:focus {
+    box-shadow: 0 0 5px cornflowerblue;
+}
+
+input[type="number"] {
+    width: 65px;
+}
+
+input[type="submit"],
+button {
+    padding: 5px 10px;
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 1px 1px 2px grey;
+    transition: color 0.1s;
+    margin-right: 0;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+button {
+    background-color: grey;
+    margin-right: 15px;
+}
+
+/*Bejelentkező ablak*/
+
+#bejelentkezo-oldal-hatter,
+#tarsasadat-hatter {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+#bejelentkezo-oldal,
+#tarsasadatokmegadasa {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background-color: beige;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    padding: 10px 30px 20px 30px;
+    text-align: center;
+    z-index: 2;
+}
+
+/*Keresőtáblázat*/
+#keresotablazat {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#keresotablazat td {
+    padding: 5px 0px;
+}
+
+
+/*Társasjátékok listája*/
+
+.flexlista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.tarsasElem {
+    margin: 8px;
+    padding: 12px;
+    width: 250px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.tarsasElem:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor:pointer;
+}
+
+.rendelve {
+    box-shadow: -10px -10px rgba(30, 144, 255, 0.1), 10px 10px rgba(30, 144, 255, 0.1), -10px 10px rgba(30, 144, 255, 0.1), 10px -10px rgba(30, 144, 255, 0.1);
+    cursor: pointer;
+}
+
+.tarsasElem img {
+    display: block;
+    max-height: 150px;
+    width: auto;
+    margin: auto;
+}
+
+#tarsasadatok {
+    height: 91vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 65px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    overflow-x: hidden;
+    transition: 0.3s;
+    text-align: center;
+}
+
+#tarsasadatmegjelenites img {
+    display: block;
+    max-height: 200px;
+    width: auto;
+    margin: auto;
+}
+
+#tarsasadatmegjelenites a {
+    color: black;
+}
+
+/*Admin táblázatok*/
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+#befoglalo{
+    height:600px;
+    overflow:auto;
+    border:2px solid grey;
+}
+
+#felhtablazat{
+    width:65%;
+    border:3px solid grey;
+}
+#rendelestablazat {
+    width: 50%;
+}
+
+.table tr {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.table tr:first-child {
+    background-color: grey;
+}
+
+.table th,
+.table td {
+    border: 1px solid black;
+    padding: 5px 8px;
+}
+
+#rendezes {
+    border: 0px;
+}
+
+#tarsasadatokmegadasa {
+    text-align: left;
+    width: 750px;
+}
+
+.kisbetu {
+    font-size: 10px;
+    color: red;
+}
+
+#diagram-nemek,#diagram-korok,#diagram-tapasztalat{
+    height:170px;
+    width:170px;
+    border-radius:50%;
+    margin:auto;
+    box-shadow: 0px 0px 5px grey;
+}
+.diagram-oszlop{
+    width:33%;
+    text-align:center;
+    padding:0 5px;
+    text-shadow: 1px 1px 1px grey;
+}
